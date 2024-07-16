@@ -16,9 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: [
-      "https://prasad-hub-client-9avxhlcfv-needlesscats-projects.vercel.app",
-    ],
+    origin: ["https://prasad-hub-client.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   })
