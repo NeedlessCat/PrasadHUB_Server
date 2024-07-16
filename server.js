@@ -4,6 +4,7 @@ const Razorpay = require("razorpay");
 const { createHmac } = require("crypto");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
+const cors = require("cors");
 
 const clientId = process.env.ClientID;
 const clientSecret = process.env.ClientSecret;
