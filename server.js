@@ -13,6 +13,17 @@ const userEmail = process.env.UserEmail;
 const app = express();
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://prasad-hub-client-9avxhlcfv-needlesscats-projects.vercel.app/",
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
@@ -134,5 +145,5 @@ app.post("/verify-payment", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
