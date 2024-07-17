@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: ["https://prasad-hub-client.vercel.app"],
+    // origin: ["http://localhost:5173"],
     methods: ["GET", "POST"],
     credentials: true,
   })
