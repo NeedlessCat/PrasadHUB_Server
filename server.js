@@ -75,19 +75,19 @@ async function sendReceiptEmail(email, paymentDetails) {
             }</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">₹${
+            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Name:</strong></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${
               paymentDetails.name
             }</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">₹${
+            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Mobile:</strong></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${
               paymentDetails.mobile
             }</td>
           </tr>
           <tr>
-            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
+            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Order Mode:</strong></td>
             <td style="padding: 10px; border: 1px solid #ddd;">₹${
               paymentDetails.role
             }</td>
