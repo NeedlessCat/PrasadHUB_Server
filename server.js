@@ -75,6 +75,24 @@ async function sendReceiptEmail(email, paymentDetails) {
             }</td>
           </tr>
           <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">₹${
+              paymentDetails.name
+            }</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">₹${
+              paymentDetails.mobile
+            }</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;"><strong>Amount:</strong></td>
+            <td style="padding: 10px; border: 1px solid #ddd;">₹${
+              paymentDetails.role
+            }</td>
+          </tr>
+          <tr>
             <td style="padding: 10px; border: 1px solid #ddd;"><strong>Date:</strong></td>
             <td style="padding: 10px; border: 1px solid #ddd;">${new Date().toLocaleString()}</td>
           </tr>
@@ -92,7 +110,7 @@ async function sendReceiptEmail(email, paymentDetails) {
     console.log("Receipt email sent successfully");
   } catch (error) {
     console.error("Error sending receipt email:", error);
-    throw error; // Rethrow the error to be handled in the calling function
+    // throw error; // Rethrow the error to be handled in the calling function
   }
 }
 
@@ -133,6 +151,9 @@ app.post("/verify-payment", async (req, res) => {
         razorpay_payment_id,
         razorpay_order_id,
         amount: order.amount / 100, // Convert from paise to rupees
+        name: req.body.name,
+        mobile: req.body.mobile,
+        role: req.body.role,
       });
       res.json({ verified: true });
     } catch (error) {
